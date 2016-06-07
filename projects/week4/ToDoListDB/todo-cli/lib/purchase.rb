@@ -4,8 +4,9 @@ class Purchase < ActiveRecord::Base
 
   belongs_to :item
   belongs_to :user
-
-  def purchase_item name, due_date: nil
-    items.create! name: name, due_date: due_date
+  def purchases_by_item_id itemid
+    p = Purchase.where(item_id: itemid).count
+    return p
   end
+  
 end
