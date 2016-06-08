@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
- # validates_presence_of :first_name, :last_name  
- # validates_length_of :password, minimum: 4
- # validates_uniqueness_of :username
-
+   has_one :address
   has_many :purchases
+  def find_id_by_name first, last
+   id = User.where(first_name: first, last_name: last).first.id
+   return id
+  end
 end
