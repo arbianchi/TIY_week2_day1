@@ -35,5 +35,7 @@ puts "Total revenue is: #{(prices_array.reduce(:+)).round(2)}."
 userid = u.find_id_by_name("Carmelo","Towne")
 total = p.cost_of_total_purchases userid
 puts "Carmelo Towne spent $#{total}."
-#need id, for each purchase push item_id>price * quant
+
+#How any users have >1 address?
+#Pluck somehow...
 binding.pry
